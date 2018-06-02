@@ -2128,7 +2128,7 @@ class ScriptWriter(object):
         """
         Select the best ScriptWriter for this environment.
         """
-        if sys.platform == 'win32' or (os.name == 'java' and os._name == 'nt'):
+        if sys.platform == 'win32' or (os.name == 'java' and os._name == 'nt') or (sys.platform == 'cli' and os.name =='nt'):
             return WindowsScriptWriter.best()
         else:
             return cls
